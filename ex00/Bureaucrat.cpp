@@ -2,14 +2,13 @@
 #include <iostream>
 #include <string>
 
-Bureaucrat::Bureaucrat() : _name(""), _grade(150) {}
+Bureaucrat::Bureaucrat() {}
 
-Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(150) {
+Bureaucrat::Bureaucrat(std::string_view name, int grade) : _name(name), _grade(grade) {
     if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
-    else if (grade > 150)
+    if (grade > 150)
         throw Bureaucrat::GradeTooLowException();
-    _grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy._name), _grade(copy._grade) {}
@@ -23,6 +22,8 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &copy) {
 }
 
 Bureaucrat::~Bureaucrat() {}
+
+
 
 const std::string &Bureaucrat::getName() const {
     return _name;
