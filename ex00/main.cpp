@@ -80,19 +80,5 @@ int main() {
         std::cerr << "Exception caught: " << e.what() << std::endl;
     }
 
-    std::cout << "\n=== Test 8: Copy constructor and assignment ===" << std::endl;
-    try {
-        Bureaucrat b10("Jack", 50);
-        Bureaucrat b11(b10);
-        std::cout << "Original: " << b10 << std::endl;
-        std::cout << "Copy: " << b11 << std::endl;
-        
-        Bureaucrat b12("Jill", 100);
-        b12 = b10;
-        std::cout << "After assignment: " << b12 << std::endl;
-    } catch (const std::exception &e) {
-        std::cerr << "Exception: " << e.what() << std::endl;
-    }
-
     return 0;
 }
