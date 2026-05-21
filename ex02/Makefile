@@ -1,6 +1,9 @@
-NAME = form_up
+NAME = aform
 
-SRCS = main.cpp Form.cpp Bureaucrat.cpp
+SRCS = main.cpp AForm.cpp Bureaucrat.cpp \
+PresidentialPardonForm.cpp RobotomyRequestForm.cpp \
+ShrubberyCreationForm.cpp
+
 OBJS = $(SRCS:.cpp=.o)
 
 CXX = 	c++
@@ -16,7 +19,7 @@ clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) *shrubbery
 
 re: fclean all
 
