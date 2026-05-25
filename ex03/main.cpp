@@ -5,6 +5,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
+#include <fstream>
 
 int main() {
     std::cout << "=== 1. Intern Creation Test ===" << std::endl;
@@ -29,14 +30,33 @@ int main() {
     }
 
     std::cout << "\n--- Test Case 2: Success - Shrubbery Creation ---" << std::endl;
-    scf = someRandomIntern.makeForm("shrubbery creation", "Home");
+    scf = someRandomIntern.makeForm("shrubbery creation", "home");
     if (scf) {
+       try {
+            Bureaucrat gardener("Gardener", 1);
+            gardener.signForm(*scf);
+            gardener.executeForm(*scf);
+            if (std::ifstream("home_shrubbery").good()) {
+                std::cout << "✓ File 'home_shrubbery' created." << std::endl;
+            } else {
+                std::cerr << "Error: File 'home_shrubbery' was not created." << std::endl;
+            }
+        } catch (std::exception& e) {
+            std::cerr << "Exception caught: " << e.what() << std::endl;
+        }
         delete scf;
     }
 
     std::cout << "\n--- Test Case 3: Success - Presidential Pardon ---" << std::endl;
     ppf = someRandomIntern.makeForm("presidential pardon", "Marvin");
     if (ppf) {
+        try {
+            Bureaucrat president("The President", 1);
+            president.signForm(*ppf);
+            president.executeForm(*ppf);
+        } catch (std::exception& e) {
+            std::cerr << "Exception caught: " << e.what() << std::endl;
+        }
         delete ppf;
     }
 
@@ -49,6 +69,6 @@ int main() {
         delete unknown;
     }
 
-    std::cout << "\n==========================================" << std::endl;
+    std::cout << "\n=================================================" << std::endl;
     return 0;
 }

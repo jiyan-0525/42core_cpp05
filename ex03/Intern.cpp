@@ -41,7 +41,6 @@ for (int i = 0; i < 3; ++i) {
         return (this->*formCreators[i])(target);
     }
 }
-
 std::cout << "Intern cannot create form: " << formName << " because it does not exist." << std::endl;
 return nullptr;
 }
