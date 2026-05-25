@@ -12,7 +12,6 @@ public:
     ~RobotomyRequestForm();
 
     void execute(Bureaucrat const &executor) const;
-    std::string const &getTarget() const;
 
 private:
     std::string _target;

@@ -33,13 +33,13 @@ int main() {
     scf = someRandomIntern.makeForm("shrubbery creation", "home");
     if (scf) {
        try {
-            Bureaucrat gardener("Gardener", 1);
+            Bureaucrat gardener("Gardener", 150);
             gardener.signForm(*scf);
             gardener.executeForm(*scf);
             if (std::ifstream("home_shrubbery").good()) {
                 std::cout << "✓ File 'home_shrubbery' created." << std::endl;
             } else {
-                std::cerr << "Error: File 'home_shrubbery' was not created." << std::endl;
+                std::cerr << "✗ File 'home_shrubbery' was not created." << std::endl;
             }
         } catch (std::exception& e) {
             std::cerr << "Exception caught: " << e.what() << std::endl;
@@ -69,6 +69,5 @@ int main() {
         delete unknown;
     }
 
-    std::cout << "\n=================================================" << std::endl;
     return 0;
 }

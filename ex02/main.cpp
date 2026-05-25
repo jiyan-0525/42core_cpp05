@@ -4,10 +4,9 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
+#include <fstream>
 
 int main() {
-    std::cout << "=== Exercise 02: Forms and Execution ===" << std::endl << std::endl;
-
     try {
         // Test 1: ShrubberyCreationForm
         std::cout << "--- Test 1: ShrubberyCreationForm ---" << std::endl;
@@ -15,7 +14,11 @@ int main() {
         ShrubberyCreationForm shrubbery("home");
         john.signForm(shrubbery);
         john.executeForm(shrubbery);
-        
+        if (std::ifstream("home_shrubbery").good()) {
+                std::cout << "✓ File 'home_shrubbery' created." << std::endl;
+            } else {
+                std::cerr << "✗ File 'home_shrubbery' was not created." << std::endl;
+            }
         std::cout << john << std::endl;
         std::cout << shrubbery << std::endl;
         
@@ -103,8 +106,6 @@ int main() {
     } catch (const std::exception &e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
-
-    std::cout << "=== All tests completed ===" << std::endl;
 
     return 0;
 }
