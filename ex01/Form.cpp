@@ -58,7 +58,9 @@ void Form::beSigned(Bureaucrat const &bureaucrat)
 
 std::ostream &operator<<(std::ostream &out, const Form &form)
 {
-    out << "Form: " << form.getName() << ", Signed: " << (form.getIsSigned() ? "Yes" : "No")
-        << ", Grade to Sign: " << form.getGradeToSign() << ", Grade to Execute: " << form.getGradeToExecute();
+    out << "Form: " << form.getName() 
+        << ", [Signed: " << std::boolalpha << form.getIsSigned() << "]"
+        << ", Grade to Sign: " << form.getGradeToSign() 
+        << ", Grade to Execute: " << form.getGradeToExecute();
     return out;
 }

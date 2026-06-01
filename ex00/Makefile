@@ -1,4 +1,4 @@
-NAME = bureaucrat1
+NAME = bureaucrat
 
 SRCS = main.cpp Bureaucrat.cpp
 OBJS = $(SRCS:.cpp=.o)
