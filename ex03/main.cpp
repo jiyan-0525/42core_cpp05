@@ -8,7 +8,7 @@
 #include <fstream>
 
 int main() {
-    std::cout << "=== 1. Intern Creation Test ===" << std::endl;
+    std::cout << "=== 1. Intern Creation ===" << std::endl;
     Intern someRandomIntern;
     AForm* rrf = NULL;
     AForm* scf = NULL;
