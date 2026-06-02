@@ -37,12 +37,12 @@ AForm* (Intern::*formCreators[3])(std::string const &target) const = {
 
 for (int i = 0; i < 3; ++i) {
     if (formName == formNames[i]) {
-        std::cout << "Intern creates " << formName << " form." << std::endl;
+        std::cout << "Intern creates form: " << formName << std::endl;
         return (this->*formCreators[i])(target);
     }
 }
 std::cout << "Intern cannot create form: " << formName << " because it does not exist." << std::endl;
-return nullptr;
+        return nullptr;
 }
 
 AForm *Intern::createShrubberyCreationForm(std::string const &target) const {

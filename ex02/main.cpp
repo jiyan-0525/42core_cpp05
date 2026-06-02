@@ -40,7 +40,7 @@ int main() {
     }
 
     try {
-        std::cout << "\n--- Test 3: PresidentialPardonForm ---" << std::endl;
+        std::cout << "--- Test 3: PresidentialPardonForm ---" << std::endl;
         Bureaucrat president("President", 3);
         PresidentialPardonForm pardon("Criminal");
         
@@ -55,7 +55,7 @@ int main() {
     }
 
     try {
-        std::cout << "\n--- Test 4: Execute unsigned form (should fail) ---" << std::endl;
+        std::cout << "--- Test 4: Execute unsigned form (should fail) ---" << std::endl;
         Bureaucrat bob("Bob", 1);
         ShrubberyCreationForm unsigned_form("garden");
         
@@ -67,7 +67,7 @@ int main() {
     }
 
     try {
-        std::cout << "\n--- Test 5: Grade too low to sign (should fail) ---" << std::endl;
+        std::cout << "--- Test 5: Grade too low to sign (should fail) ---" << std::endl;
         Bureaucrat low_grade("LowGrade", 150);
         ShrubberyCreationForm form("park");
         
@@ -82,7 +82,7 @@ int main() {
     }
 
     try {
-        std::cout << "\n--- Test 6: Grade too low to execute (should fail) ---" << std::endl;
+        std::cout << "--- Test 6: Grade too low to execute (should fail) ---" << std::endl;
         Bureaucrat mediocre("Mediocre", 140);
         RobotomyRequestForm robotomy2("Target");
         

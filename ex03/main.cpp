@@ -8,7 +8,7 @@
 #include <fstream>
 
 int main() {
-    std::cout << "=== 1. Intern Creation ===" << std::endl;
+    srand(time(0));
     Intern someRandomIntern;
     AForm* rrf = NULL;
     AForm* scf = NULL;
@@ -18,11 +18,12 @@ int main() {
     std::cout << "\n--- Test Case 1: Success - Robotomy Request ---" << std::endl;
     rrf = someRandomIntern.makeForm("robotomy request", "Bender");
     if (rrf) {
-        std::cout << "Form Name: " << rrf->getName() << std::endl;
         try {
             Bureaucrat boss("The Boss", 1);
             boss.signForm(*rrf);
-            boss.executeForm(*rrf);
+            for (int i = 0; i < 4; i++) {
+                boss.executeForm(*rrf);
+            }
         } catch (std::exception& e) {
             std::cerr << "Exception caught: " << e.what() << std::endl;
         }
