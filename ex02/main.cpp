@@ -34,13 +34,12 @@ int main() {
         
         jane.signForm(robotomy);
         jane.executeForm(robotomy);
-        std::cout << std::endl;
     } catch (const std::exception &e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     try {
-        std::cout << "--- Test 3: PresidentialPardonForm ---" << std::endl;
+        std::cout << "\n--- Test 3: PresidentialPardonForm ---" << std::endl;
         Bureaucrat president("President", 3);
         PresidentialPardonForm pardon("Criminal");
         
@@ -49,25 +48,23 @@ int main() {
         
         president.signForm(pardon);
         president.executeForm(pardon);
-        std::cout << std::endl;
     } catch (const std::exception &e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     try {
-        std::cout << "--- Test 4: Execute unsigned form (should fail) ---" << std::endl;
+        std::cout << "\n--- Test 4: Execute unsigned form (should fail) ---" << std::endl;
         Bureaucrat bob("Bob", 1);
         ShrubberyCreationForm unsigned_form("garden");
         
         std::cout << bob << std::endl;
         bob.executeForm(unsigned_form);
-        std::cout << std::endl;
     } catch (const std::exception &e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     try {
-        std::cout << "--- Test 5: Grade too low to sign (should fail) ---" << std::endl;
+        std::cout << "\n--- Test 5: Grade too low to sign (should fail) ---" << std::endl;
         Bureaucrat low_grade("LowGrade", 150);
         ShrubberyCreationForm form("park");
         
@@ -76,13 +73,12 @@ int main() {
         
         low_grade.signForm(form);
         low_grade.executeForm(form);
-        std::cout << std::endl;
     } catch (const std::exception &e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
     try {
-        std::cout << "--- Test 6: Grade too low to execute (should fail) ---" << std::endl;
+        std::cout << "\n--- Test 6: Grade too low to execute (should fail) ---" << std::endl;
         Bureaucrat mediocre("Mediocre", 140);
         RobotomyRequestForm robotomy2("Target");
         
@@ -91,7 +87,6 @@ int main() {
         
         mediocre.signForm(robotomy2);
         mediocre.executeForm(robotomy2);
-        std::cout << std::endl;
     } catch (const std::exception &e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
