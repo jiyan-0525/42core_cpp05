@@ -3,7 +3,7 @@
 
 int main() {
     Bureaucrat bob("Bob", 1);
-    Bureaucrat alice("Alice", 150);
+    Bureaucrat alice("Alice", 149);
     std::cout << bob << std::endl;
     std::cout << alice << std::endl;
     try {
