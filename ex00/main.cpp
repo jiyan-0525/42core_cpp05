@@ -2,8 +2,8 @@
 #include <iostream>
 
 int main() {
-    Bureaucrat bob("Bob", 1);
-    Bureaucrat alice("Alice", 150);
+    Bureaucrat bob("Bob", 150);
+    Bureaucrat alice("Alice", 1);
     std::cout << bob << std::endl;
     std::cout << alice << std::endl;
     try {
