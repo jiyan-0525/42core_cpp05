@@ -3,7 +3,7 @@
 #include <iostream>
 
 PresidentialPardonForm::PresidentialPardonForm() 
-    : AForm("PresidentialPardonForm", 25, 5), _target("default") {}
+    : AForm("PresidentialPardonForm", 25, 5), _target("") {} // the OCF rule use "" as a placeholder for the target
 
 PresidentialPardonForm::PresidentialPardonForm(std::string const &target) 
     : AForm("PresidentialPardonForm", 25, 5), _target(target) {}
