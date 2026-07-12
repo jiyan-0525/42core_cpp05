@@ -5,8 +5,8 @@
 int main() {
     std::cout << "-----Test 1: Successful -----" << std::endl;
     try {
-        Bureaucrat john("John", 150);
-        Form taxForm("Tax-Form", 50, 40);
+        Bureaucrat john("John", 20);
+        Form taxForm("Tax-Form", 150, 100);
         std::cout << john << std::endl;
         std::cout << taxForm << std::endl;
 
