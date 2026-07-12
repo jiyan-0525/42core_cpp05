@@ -19,7 +19,7 @@ int main() {
     rrf = someRandomIntern.makeForm("robotomy request", "Bender");
     if (rrf) {
         try {
-            Bureaucrat boss("The Boss", 1);
+            Bureaucrat boss("The Boss", 45);
             boss.signForm(*rrf);
             for (int i = 0; i < 4; i++) {
                 boss.executeForm(*rrf);
@@ -34,7 +34,7 @@ int main() {
     scf = someRandomIntern.makeForm("shrubbery creation", "home");
     if (scf) {
        try {
-            Bureaucrat gardener("Gardener", 137);
+            Bureaucrat gardener("Gardener", 150);
             gardener.signForm(*scf);
             gardener.executeForm(*scf);
             if (std::ifstream("home_shrubbery").good()) {

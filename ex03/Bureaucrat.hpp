@@ -9,7 +9,7 @@ class AForm;
 class Bureaucrat {
 public:
     Bureaucrat();
-    Bureaucrat(std::string_view name, int grade);
+    Bureaucrat(const std::string &name, int grade);
     Bureaucrat(const Bureaucrat &other);
     Bureaucrat &operator=(const Bureaucrat &other);
     ~Bureaucrat();
@@ -36,7 +36,7 @@ public:
     };
 
 private:
-    std::string _name;
+    const std::string _name;
     int _grade;
 };
 
