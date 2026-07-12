@@ -33,7 +33,9 @@ int main() {
         std::cout << robotomy << std::endl;
         
         jane.signForm(robotomy);
-        jane.executeForm(robotomy);
+        for (int i = 0; i < 4; i++) {
+            jane.executeForm(robotomy);
+        }
     } catch (const std::exception &e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
