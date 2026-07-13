@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-Bureaucrat::Bureaucrat() : _name(""), _grade(150) {}
+Bureaucrat::Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade) {
     if (grade < 1)
